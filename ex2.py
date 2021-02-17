@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 path = 'books.xml'
 tree = ET.parse(path)
 root = tree.getroot()
+root = ET.fromstring(books_as_string)
 
 
 class Book:
@@ -34,5 +35,6 @@ class Book:
     def getdescription(self):
         return self.description
 
-# https://www.geeksforgeeks.org/xml-parsing-python/
+# https://stackoverflow.com/questions/18399407/how-to-convert-xml-objects-to-python-objects
+
 
