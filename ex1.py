@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as ET
 
+from pip._vendor.distlib.compat import raw_input
+
 
 class BuscarLibro:
 
@@ -19,7 +21,7 @@ def main():
     if idlibro is not None:
         buscarlibroporid(idlibro)
     else:
-        print "Este libro no existe"
+        print ("Este libro no existe")
 
 
 # devuelve el id del libro cuyo nombre ha coincidido con nuestra busqueda
@@ -32,12 +34,12 @@ def getbookidbyname(nombre):
 # muestra la informacion completa del libro segun su id
 def buscarlibroporid(bookid):
     for book in root.findall('.//book[@id="' + str(bookid) + '"]'):
-        print 'Author: ', book.find('author').text
-        print 'Title: ', book.find('title').text
-        print 'Genre: ', book.find('genre').text
-        print 'Price: ', book.find('price').text
-        print 'Publish date: ', book.find('publish_date').text
-        print 'Description: ', book.find('description').text
+        print ('Author: ', book.find('author').text)
+        print ('Title: ', book.find('title').text)
+        print ('Genre: ', book.find('genre').text)
+        print ('Price: ', book.find('price').text)
+        print ('Publish date: ', book.find('publish_date').text)
+        print ('Description: ', book.find('description').text)
 
 
 if __name__ == "__main__":
